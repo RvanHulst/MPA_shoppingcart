@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/home', function () {
     return view('welcome');
 });
+
+Route::get('/categories', [CategoryController::class, 'getAllCategories']);
